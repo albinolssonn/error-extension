@@ -1,13 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Error Extension",
-  "description": "DESCRIPTION",
+  "name": "hint: Debug Master",
+  "description": "Simplify console errors w/ clear explanations for web dev & JavaScript. #debugging #developertools #ErrorMessages",
   "version": "1.0.0",
+  "author": "hint", 
   "action": {
       "default_popup": "index.html",
       "default_title": "Open the popup"
   },
-  
+  "icons": {
+    "16": "hint-16x16.png",
+    "32": "hint-32x32.png",
+    "48": "hint-48x48.png",
+    "128": "hint-128x128.png"
+  },
   "permissions": [
       "scripting",
       "activeTab",
