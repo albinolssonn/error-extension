@@ -1,5 +1,3 @@
-/*global chrome*/
-
 import "./App.css";
 import { Configuration, OpenAIApi } from "openai";
 import { useState } from "react";
@@ -7,11 +5,19 @@ import OutPutPage from "./components/OutPutPage";
 import InputPage from "./components/InputPage";
 import LoadingPage from "./components/LoadingPage";
 import { open_API_key } from "./APIKeys";
+import SignPage from "./components/SignPage";
+import { auth } from "./server/firebase-config";
+import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState("");
+  const [user, setUser] = useState("");
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
 
   const configuration = new Configuration({
     apiKey: open_API_key,
@@ -58,19 +64,27 @@ function App() {
   return (
     <div className="App">
       <div className="extenstion-section">
-        {isLoading ? (
-          <LoadingPage />
+        {user ? (
+          <>
+            {isLoading ? (
+              <LoadingPage />
+            ) : (
+              <>
+                {result ? (
+                  <OutPutPage
+                    result={result}
+                    copyResultFunction={copyResultFunction}
+                    resetFunction={resetFunction}
+                  />
+                ) : (
+                  <InputPage setInput={setInput} OpenAIFetch={OpenAIFetch} />
+                )}
+              </>
+            )}
+          </>
         ) : (
           <>
-            {result ? (
-              <OutPutPage
-                result={result}
-                copyResultFunction={copyResultFunction}
-                resetFunction={resetFunction}
-              />
-            ) : (
-              <InputPage setInput={setInput} OpenAIFetch={OpenAIFetch} />
-            )}
+            <SignPage />
           </>
         )}
       </div>

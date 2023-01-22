@@ -13,13 +13,5 @@
     "32": "hint-32x32.png",
     "48": "hint-48x48.png",
     "128": "hint-128x128.png"
-  },
-  "permissions": [
-      "scripting",
-      "activeTab",
-      "storage"
-  ],
-  "host_permissions": [
-      "https://*/"
-  ]
+  }
 }
