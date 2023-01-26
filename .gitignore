@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 ### Egna filer
 APIKeys.js
+src/API/open_api.js
