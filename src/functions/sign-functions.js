@@ -1,8 +1,10 @@
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../../server/firebase-config";
+import { auth } from "../server/firebase-config";
 
 // Inloggning
 
@@ -14,7 +16,7 @@ export const signInWithEmail = async (email, password, setErrorCode) => {
   }
 };
 
-// Registrering
+// Registrering med email
 
 export const registerWithEmail = async (
   email,
@@ -34,5 +36,14 @@ export const registerWithEmail = async (
     }
   } else {
     console.log("Password missmatch...");
+  }
+};
+
+export const signInWithGoogle = async (setErrorCode) => {
+  try {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+  } catch (error) {
+    setErrorCode(error.message);
   }
 };

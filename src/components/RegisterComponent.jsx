@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { registerWithEmail } from "./functions/sign-functions";
+import {
+  registerWithEmail,
+  signInWithGoogle,
+} from "../functions/sign-functions";
 
 const RegisterComponent = ({ setSignStepper }) => {
   const [email, setEmail] = useState("");
@@ -15,6 +18,12 @@ const RegisterComponent = ({ setSignStepper }) => {
   const registerHandler = () => {
     registerWithEmail(email, password, vPassword, setErrorCode);
   };
+
+  const googleSignInHandler = () => {
+    signInWithGoogle(setErrorCode);
+  };
+
+  // Funktion för visuell felmeddelande
 
   return (
     <div className="sign-form">
@@ -40,7 +49,10 @@ const RegisterComponent = ({ setSignStepper }) => {
       </div>
 
       <div className="btn-container">
-        <div className="sign-btn" onClick={registerHandler}>
+        <div
+          className="sign-btn"
+          onClick={registerHandler}
+        >
           <p>Create Account</p>
         </div>
         <div className="divider">
@@ -48,7 +60,10 @@ const RegisterComponent = ({ setSignStepper }) => {
           <p>or</p>
           <div className="line"></div>
         </div>
-        <div className="sign-btn">
+        <div
+          className="sign-btn"
+          onClick={googleSignInHandler}
+        >
           <p>Sign in with</p>
           <FcGoogle fontSize={"16px"} />
         </div>

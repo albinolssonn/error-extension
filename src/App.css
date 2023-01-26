@@ -27,6 +27,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   text-align: left;
   color: #ffff33;
   border-bottom: 1px solid #ffff33;
@@ -34,6 +35,16 @@
 
 #logo {
   width: 80px;
+}
+
+.menu-btn {
+  color: #80808e;
+  transition: 0.2s ease-in;
+}
+
+.menu-btn:hover {
+  color: #ffff33;
+  cursor: pointer;
 }
 
 /* Text */

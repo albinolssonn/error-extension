@@ -1,69 +1,21 @@
 import "./App.css";
-import { Configuration, OpenAIApi } from "openai";
-import { useState } from "react";
-import OutPutPage from "./components/OutPutPage";
-import InputPage from "./components/InputPage";
-import LoadingPage from "./components/LoadingPage";
-import { open_API_key } from "./APIKeys";
-import SignPage from "./components/SignPage";
-import { auth } from "./server/firebase-config";
-import { onAuthStateChanged } from "firebase/auth";
+import IndexPage from "./components/IndexPage";
 
 function App() {
-  const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState("");
-  const [user, setUser] = useState("");
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
-
-  const configuration = new Configuration({
-    apiKey: open_API_key,
-  });
-
-  const openai = new OpenAIApi(configuration);
-
-  const OpenAIFetch = async () => {
-    setIsLoading(true);
-
-    try {
-      const response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: `Q: Explain how to solve the following error: ${input}\nA:`,
-        temperature: 0,
-        max_tokens: 100,
-        top_p: 1,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.0,
-        stop: ["\n"],
-      });
-
-      if (response.data.choices[0].text.length === 0) {
-        setResult("Sorry, but I don't have a good answer for this one, yet...");
-        setIsLoading(false);
-      } else {
-        setResult(response.data.choices[0].text);
-        setIsLoading(false);
-      }
-    } catch (err) {
-      setResult(err.text);
-    }
-  };
-
-  const copyResultFunction = () => {
-    navigator.clipboard.writeText(result);
-  };
-
-  const resetFunction = () => {
-    setInput("");
-    setResult("");
-  };
-
   return (
     <div className="App">
       <div className="extenstion-section">
+        <IndexPage />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+{
+  // Icke fungerande...
+  /* <div className="extenstion-section">
         {user ? (
           <>
             {isLoading ? (
@@ -77,7 +29,10 @@ function App() {
                     resetFunction={resetFunction}
                   />
                 ) : (
-                  <InputPage setInput={setInput} OpenAIFetch={OpenAIFetch} />
+                  <InputPage
+                    setInput={setInput}
+                    OpenAIFetch={OpenAIFetch}
+                  />
                 )}
               </>
             )}
@@ -87,9 +42,29 @@ function App() {
             <SignPage />
           </>
         )}
-      </div>
-    </div>
-  );
+      </div> */
 }
 
-export default App;
+{
+  // Fungerande
+  /* <div className="extenstion-section">
+        {isLoading ? (
+          <LoadingPage />
+        ) : (
+          <>
+            {result ? (
+              <OutPutPage
+                result={result}
+                copyResultFunction={copyResultFunction}
+                resetFunction={resetFunction}
+              />
+            ) : (
+              <InputPage
+                setInput={setInput}
+                OpenAIFetch={OpenAIFetch}
+              />
+            )}
+          </>
+        )}
+      </div> */
+}

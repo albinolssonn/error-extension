@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 // import { useNavigate } from "react-router-dom";
-import { signInWithEmail } from "./functions/sign-functions";
+import { signInWithEmail, signInWithGoogle } from "../functions/sign-functions";
 
 const SignInComponent = ({ setSignStepper }) => {
   const [email, setEmail] = useState("");
@@ -12,9 +12,15 @@ const SignInComponent = ({ setSignStepper }) => {
     setSignStepper(1);
   };
 
-  const loginHandler = () => {
+  const emailLoginHandler = () => {
     signInWithEmail(email, password, setErrorCode);
   };
+
+  const googleSignInHandler = () => {
+    signInWithGoogle(setErrorCode);
+  };
+
+  // Funktion för visuell felmeddelande
 
   return (
     <div className="sign-form">
@@ -35,7 +41,10 @@ const SignInComponent = ({ setSignStepper }) => {
       </div>
 
       <div className="btn-container">
-        <div className="sign-btn" onClick={loginHandler}>
+        <div
+          className="sign-btn"
+          onClick={emailLoginHandler}
+        >
           <p>Sign in</p>
         </div>
         <div className="divider">
@@ -43,7 +52,10 @@ const SignInComponent = ({ setSignStepper }) => {
           <p>or</p>
           <div className="line"></div>
         </div>
-        <div className="sign-btn">
+        <div
+          className="sign-btn"
+          onClick={googleSignInHandler}
+        >
           <p>Sign in with</p>
           <FcGoogle fontSize={"16px"} />
         </div>
