@@ -12,9 +12,9 @@ export const OpenAIFetch = async (setIsLoading, input, setResult) => {
 
   const response = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: `Q: Explain with maximum 100 tokens how to solve the following error: ${input}\nA:`,
+    prompt: `Q: Explain with maximum 200 tokens how to solve the following error: ${input}\nA:`,
     temperature: 0,
-    max_tokens: 100,
+    max_tokens: 200,
     top_p: 1,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,

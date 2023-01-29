@@ -1,6 +1,7 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { auth } from "../server/firebase-config";
 
 const HeaderComponent = ({ isLoading, setMenuToggle, menuToggle }) => {
   const menuHandler = () => {
@@ -19,27 +20,30 @@ const HeaderComponent = ({ isLoading, setMenuToggle, menuToggle }) => {
           src="hint-main-logo.png"
           alt="hint-extension-logo"
         />
-
-        {!isLoading && (
+        {auth.currentUser && (
           <>
-            {menuToggle ? (
-              <div
-                className="menu-btn"
-                onClick={() => {
-                  menuHandler();
-                }}
-              >
-                <CloseIcon />
-              </div>
-            ) : (
-              <div
-                className="menu-btn"
-                onClick={() => {
-                  menuHandler();
-                }}
-              >
-                <MenuIcon />
-              </div>
+            {!isLoading && (
+              <>
+                {menuToggle ? (
+                  <div
+                    className="menu-btn"
+                    onClick={() => {
+                      menuHandler();
+                    }}
+                  >
+                    <CloseIcon />
+                  </div>
+                ) : (
+                  <div
+                    className="menu-btn"
+                    onClick={() => {
+                      menuHandler();
+                    }}
+                  >
+                    <MenuIcon />
+                  </div>
+                )}
+              </>
             )}
           </>
         )}

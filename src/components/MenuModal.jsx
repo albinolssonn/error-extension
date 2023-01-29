@@ -1,6 +1,6 @@
 import React from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
-import TuneIcon from "@mui/icons-material/Tune";
+import PublicIcon from "@mui/icons-material/Public";
 import { signOutFunction } from "../functions/sign-functions";
 
 const MenuModal = ({ setMenuToggle }) => {
@@ -11,10 +11,8 @@ const MenuModal = ({ setMenuToggle }) => {
   return (
     <div className="menu-section">
       <div className="menu-container">
-        <button id="menu-btn">Menu 1</button>
-        <button id="menu-btn">Menu 1</button>
-        <button id="menu-btn">Menu 1</button>
-        <button id="menu-btn">Menu 1</button>
+        <button id="menu-btn">Upgrade account</button>
+        <button id="menu-btn">Account Settings</button>
       </div>
 
       <div className="menu-footer">
@@ -27,8 +25,8 @@ const MenuModal = ({ setMenuToggle }) => {
         </div>
 
         <div className="footer-btn">
-          <TuneIcon />
-          <p>Settings</p>
+          <PublicIcon />
+          <p>Visit us</p>
         </div>
       </div>
     </div>
