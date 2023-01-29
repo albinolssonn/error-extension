@@ -55,18 +55,6 @@ const RegisterComponent = ({ setSignStepper }) => {
         >
           <p>Create Account</p>
         </div>
-        <div className="divider">
-          <div className="line"></div>
-          <p>or</p>
-          <div className="line"></div>
-        </div>
-        <div
-          className="sign-btn"
-          onClick={googleSignInHandler}
-        >
-          <p>Sign in with</p>
-          <FcGoogle fontSize={"16px"} />
-        </div>
         <div className="navlink">
           <p onClick={navigateToSignIn}>Are you already a part of us?</p>
         </div>
