@@ -47,7 +47,26 @@ const IndexPage = () => {
         menuToggle={menuToggle}
       />
 
-      {menuToggle ? (
+      {isLoading ? (
+        <LoadingComponent />
+      ) : (
+        <>
+          {result ? (
+            <OutputContainer
+              result={result}
+              resetHandler={resetHandler}
+              copyHandler={copyHandler}
+            />
+          ) : (
+            <InputContainer
+              setInput={setInput}
+              fetchHandler={fetchHandler}
+            />
+          )}
+        </>
+      )}
+
+      {/* {menuToggle ? (
         <>
           <MenuModal setMenuToggle={setMenuToggle} />
         </>
@@ -78,7 +97,7 @@ const IndexPage = () => {
             <SignPage />
           )}
         </>
-      )}
+      )} */}
     </div>
   );
 };

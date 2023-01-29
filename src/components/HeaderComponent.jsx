@@ -20,7 +20,7 @@ const HeaderComponent = ({ isLoading, setMenuToggle, menuToggle }) => {
           src="hint-main-logo.png"
           alt="hint-extension-logo"
         />
-        {auth.currentUser && (
+        {/* {auth.currentUser && (
           <>
             {!isLoading && (
               <>
@@ -46,7 +46,7 @@ const HeaderComponent = ({ isLoading, setMenuToggle, menuToggle }) => {
               </>
             )}
           </>
-        )}
+        )} */}
       </div>
     </div>
   );

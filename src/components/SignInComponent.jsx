@@ -47,7 +47,7 @@ const SignInComponent = ({ setSignStepper }) => {
         >
           <p>Sign in</p>
         </div>
-        <div className="divider">
+        {/* <div className="divider">
           <div className="line"></div>
           <p>or</p>
           <div className="line"></div>
@@ -58,7 +58,7 @@ const SignInComponent = ({ setSignStepper }) => {
         >
           <p>Sign in with</p>
           <FcGoogle fontSize={"16px"} />
-        </div>
+        </div> */}
         <div className="navlink">
           <p onClick={navigateToRegister}>Don't have an account yet?</p>
         </div>

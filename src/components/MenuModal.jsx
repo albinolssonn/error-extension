@@ -11,8 +11,8 @@ const MenuModal = ({ setMenuToggle }) => {
   return (
     <div className="menu-section">
       <div className="menu-container">
-        <button id="menu-btn">Upgrade account</button>
-        <button id="menu-btn">Account Settings</button>
+        {/* <button id="menu-btn">Upgrade account</button>
+        <button id="menu-btn">Account Settings</button> */}
       </div>
 
       <div className="menu-footer">
@@ -24,10 +24,10 @@ const MenuModal = ({ setMenuToggle }) => {
           <p>Sign Out</p>
         </div>
 
-        <div className="footer-btn">
+        {/* <div className="footer-btn">
           <PublicIcon />
           <p>Visit us</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

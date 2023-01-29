@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Debug Master",
   "description": "Simplify console errors w/ clear explanations for web dev & JavaScript. #debugging #developertools #ErrorMessages",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "hint", 
   "action": {
       "default_popup": "index.html",
