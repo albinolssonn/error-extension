@@ -3,6 +3,8 @@ import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
+  getAuth,
+  signOut,
 } from "firebase/auth";
 import { auth } from "../server/firebase-config";
 
@@ -39,6 +41,7 @@ export const registerWithEmail = async (
   }
 };
 
+// Sign & Register with google
 export const signInWithGoogle = async (setErrorCode) => {
   try {
     const provider = new GoogleAuthProvider();
@@ -46,4 +49,17 @@ export const signInWithGoogle = async (setErrorCode) => {
   } catch (error) {
     setErrorCode(error.message);
   }
+};
+
+// Signout function
+
+export const signOutFunction = async (setMenuToggle) => {
+  const auth = getAuth();
+  signOut(auth)
+    .then(() => {
+      setMenuToggle(false);
+    })
+    .catch((error) => {
+      // An error happened.
+    });
 };

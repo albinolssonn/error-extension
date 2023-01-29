@@ -214,3 +214,63 @@ textarea {
   color: #a4a4b7;
   cursor: pointer;
 }
+
+
+/* Menu */
+.menu-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-container {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#menu-btn {
+  color: #80808e;
+  background: #34343a;
+  margin: 0px 5px;
+  font-size: 14px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+}
+
+#menu-btn:hover {
+  background: #4a4a52;
+  color: #f5f5f5;
+  cursor: pointer
+}
+
+.menu-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.footer-btn {
+  color: #80808e;
+  background: #34343a;
+  width: 100%;
+  height: 40px;
+  margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+}
+
+.footer-btn:hover {
+  background: #4a4a52;
+  color: #f5f5f5;
+  cursor: pointer
+}

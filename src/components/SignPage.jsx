@@ -8,8 +8,6 @@ const SignPage = () => {
 
   return (
     <div className="content-container">
-      <HeaderComponent />
-
       {signStepper === 1 ? (
         <RegisterComponent setSignStepper={setSignStepper} />
       ) : (

@@ -1,7 +1,16 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ isLoading, setMenuToggle, menuToggle }) => {
+  const menuHandler = () => {
+    if (menuToggle === true) {
+      setMenuToggle(false);
+    } else {
+      setMenuToggle(true);
+    }
+  };
+
   return (
     <div className="header-section">
       <div className="logo-container">
@@ -11,9 +20,29 @@ const HeaderComponent = () => {
           alt="hint-extension-logo"
         />
 
-        <div className="menu-btn">
-          <MenuIcon />
-        </div>
+        {!isLoading && (
+          <>
+            {menuToggle ? (
+              <div
+                className="menu-btn"
+                onClick={() => {
+                  menuHandler();
+                }}
+              >
+                <CloseIcon />
+              </div>
+            ) : (
+              <div
+                className="menu-btn"
+                onClick={() => {
+                  menuHandler();
+                }}
+              >
+                <MenuIcon />
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );

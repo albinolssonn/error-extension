@@ -68,7 +68,7 @@ const RegisterComponent = ({ setSignStepper }) => {
           <FcGoogle fontSize={"16px"} />
         </div>
         <div className="navlink">
-          <p onClick={navigateToSignIn}>Are you already part of us?</p>
+          <p onClick={navigateToSignIn}>Are you already a part of us?</p>
         </div>
       </div>
     </div>
