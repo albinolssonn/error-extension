@@ -19,9 +19,13 @@ const RegisterComponent = ({ setSignStepper }) => {
     registerWithEmail(email, password, vPassword, setErrorCode);
   };
 
-  const googleSignInHandler = () => {
-    signInWithGoogle(setErrorCode);
+  const termsOfUseAction = () => {
+    console.log("Terms of use compliant!");
   };
+
+  // const googleSignInHandler = () => {
+  //   signInWithGoogle(setErrorCode);
+  // };
 
   // Funktion för visuell felmeddelande
 
@@ -58,6 +62,16 @@ const RegisterComponent = ({ setSignStepper }) => {
         <div className="navlink">
           <p onClick={navigateToSignIn}>Are you already a part of us?</p>
         </div>
+      </div>
+
+      <div className="t-o-u-text">
+        <p>By signing up you agree to our </p>
+        <p
+          onClick={() => setSignStepper(3)}
+          id="inline-link"
+        >
+          terms of use.
+        </p>
       </div>
     </div>
   );

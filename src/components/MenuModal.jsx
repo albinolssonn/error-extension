@@ -1,34 +1,23 @@
-import React from "react";
-import LogoutIcon from "@mui/icons-material/Logout";
-import PublicIcon from "@mui/icons-material/Public";
-import { signOutFunction } from "../functions/sign-functions";
+import React, { useState } from "react";
+
+import MenuComponent from "./MenuComponent";
+import PPComponent from "./PPComponent";
 
 const MenuModal = ({ setMenuToggle }) => {
-  const signOutHandler = () => {
-    signOutFunction(setMenuToggle);
-  };
+  const [contentToggle, setContentToggle] = useState(1);
 
   return (
     <div className="menu-section">
-      <div className="menu-container">
-        <button id="menu-btn">Upgrade account</button>
-        <button id="menu-btn">Account Settings</button>
-      </div>
+      {contentToggle === 1 && (
+        <MenuComponent
+          setMenuToggle={setMenuToggle}
+          setContentToggle={setContentToggle}
+        />
+      )}
 
-      <div className="menu-footer">
-        <div
-          className="footer-btn"
-          onClick={signOutHandler}
-        >
-          <LogoutIcon />
-          <p>Sign Out</p>
-        </div>
-
-        <div className="footer-btn">
-          <PublicIcon />
-          <p>Visit us</p>
-        </div>
-      </div>
+      {contentToggle === 2 && (
+        <PPComponent setContentToggle={setContentToggle} />
+      )}
     </div>
   );
 };
