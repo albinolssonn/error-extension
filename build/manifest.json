@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Debug Master",
-  "description": "Simplify console errors w/ clear explanations for web dev & JavaScript. #debugging #developertools #ErrorMessages",
+  "description": "Simplify console errors w/ clear explanations for web dev & JavaScript.",
   "version": "1.0.0",
   "author": "hint", 
   "action": {
