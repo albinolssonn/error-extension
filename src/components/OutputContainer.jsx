@@ -1,27 +1,25 @@
 import React from "react";
+import MainBtnComponent from "./MainBtnComponent";
 
 const OutputContainer = ({ result, resetHandler, copyHandler }) => {
   return (
-    <>
-      <div className="text-container">
+    <div className="text-content">
+      <div className="text-content">
         <textarea readOnly>{result}</textarea>
       </div>
 
-      <div className="multiple-btns-container">
-        <div
-          className="action-btn"
-          onClick={copyHandler}
-        >
-          <p>Copy Explanation</p>
-        </div>
-        <div
-          className="action-btn"
-          onClick={resetHandler}
-        >
-          <p>New Error</p>
-        </div>
+      <div className="footer">
+        <MainBtnComponent
+          btnAction={copyHandler}
+          btnText={"Copy explanation"}
+        />
+
+        <MainBtnComponent
+          btnAction={resetHandler}
+          btnText={"New error"}
+        />
       </div>
-    </>
+    </div>
   );
 };
 

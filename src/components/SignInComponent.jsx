@@ -16,9 +16,9 @@ const SignInComponent = ({ setSignStepper }) => {
     signInWithEmail(email, password, setErrorCode);
   };
 
-  const googleSignInHandler = () => {
-    signInWithGoogle(setErrorCode);
-  };
+  // const googleSignInHandler = () => {
+  //   signInWithGoogle(setErrorCode);
+  // };
 
   // Funktion för visuell felmeddelande
 
@@ -40,9 +40,9 @@ const SignInComponent = ({ setSignStepper }) => {
         />
       </div>
 
-      <div className="btn-container">
+      <div className="sign-btn-container">
         <div
-          className="sign-btn"
+          id="main-btn"
           onClick={emailLoginHandler}
         >
           <p>Sign in</p>

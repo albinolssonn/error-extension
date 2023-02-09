@@ -1,62 +1,111 @@
 import React from "react";
+import MainBtnComponent from "./MainBtnComponent";
 
-const TOUComponent = ({ btnAction }) => {
+const TOUComponent = ({ setSignStepper }) => {
   return (
-    <div className="TOU-section">
-      <div className="TOU-container">
-        <h1>Terms of Use</h1>
+    <div className="paragraph-section">
+      <div className="paragraph-container">
+        <h1>Terms of Use Agreement</h1>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Magnis dis
-          parturient montes nascetur ridiculus mus. Porta lorem mollis aliquam
-          ut porttitor leo. At quis risus sed vulputate odio ut. Tincidunt nunc
-          pulvinar sapien et ligula ullamcorper malesuada proin libero. Vitae
-          congue eu consequat ac felis donec et odio. Libero nunc consequat
-          interdum varius sit amet. Commodo nulla facilisi nullam vehicula.
-          Suspendisse in est ante in. Hendrerit dolor magna eget est lorem ipsum
-          dolor. Consectetur lorem donec massa sapien faucibus et. Mauris
-          pharetra et ultrices neque ornare. Ut lectus arcu bibendum at.
-          Volutpat blandit aliquam etiam erat velit scelerisque in dictum non.
+          Welcome to [Website Name], an online platform that provides
+          [Services/Features]. This Terms of Use Agreement (the “Agreement”)
+          sets forth the legally binding terms for your use of our website and
+          services.
         </p>
 
         <p>
-          Interdum velit euismod in pellentesque massa placerat duis. Accumsan
-          tortor posuere ac ut. Diam quis enim lobortis scelerisque fermentum
-          dui. Nulla facilisi morbi tempus iaculis urna id volutpat lacus.
-          Hendrerit dolor magna eget est lorem ipsum. Posuere lorem ipsum dolor
-          sit. Vel turpis nunc eget lorem dolor sed viverra ipsum. Scelerisque
-          in dictum non consectetur a erat. Elit duis tristique sollicitudin
-          nibh sit amet commodo. Faucibus scelerisque eleifend donec pretium
-          vulputate sapien nec sagittis aliquam. Id consectetur purus ut
-          faucibus pulvinar. Ipsum nunc aliquet bibendum enim facilisis gravida
-          neque convallis a. Congue quisque egestas diam in arcu cursus euismod
-          quis viverra. Sit amet risus nullam eget felis eget nunc lobortis.
+          Please read this Agreement carefully before accessing or using our
+          website and services. By accessing or using our website and services,
+          you agree to be bound by all the terms and conditions of this
+          Agreement. If you do not agree to all the terms and conditions of this
+          Agreement, you may not access or use our website and services.
         </p>
 
+        <h4>1. Eligibility</h4>
         <p>
-          Eu scelerisque felis imperdiet proin fermentum leo vel orci. Tincidunt
-          lobortis feugiat vivamus at. Facilisis magna etiam tempor orci eu. In
-          arcu cursus euismod quis viverra nibh cras pulvinar. Non quam lacus
-          suspendisse faucibus interdum posuere lorem ipsum dolor. Nam at lectus
-          urna duis convallis convallis tellus id interdum. Aliquet enim tortor
-          at auctor urna nunc id cursus. At lectus urna duis convallis
-          convallis. Aliquam id diam maecenas ultricies mi. A diam maecenas sed
-          enim. Diam vulputate ut pharetra sit amet aliquam id diam maecenas.
-          Sit amet cursus sit amet dictum. Morbi enim nunc faucibus a
-          pellentesque. Semper viverra nam libero justo laoreet. Cursus vitae
-          congue mauris rhoncus aenean. Et netus et malesuada fames. Mauris a
-          diam maecenas sed. Adipiscing commodo elit at imperdiet.
+          The use of our website and services is limited to individuals who are
+          at least [age]. By using our website and services, you represent and
+          warrant that you meet this eligibility requirement.
+        </p>
+        <h4>2. Intellectual Property</h4>
+
+        <p>
+          Our website and services, including all content, software, and
+          functionality, are owned by [Company Name] or our licensors and are
+          protected by United States and international copyright, trademark, and
+          other intellectual property laws.
+        </p>
+
+        <h4>3. License to Use</h4>
+
+        <p>
+          Subject to your compliance with this Agreement, [Company Name] grants
+          you a limited, non-exclusive, non-transferable license to access and
+          use our website and services for your personal, non-commercial use.
+        </p>
+
+        <h4>4. Proprietary Rights</h4>
+
+        <p>
+          You acknowledge and agree that our website and services and all
+          content, software, and functionality are proprietary and confidential
+          information of [Company Name]. You shall not modify, copy, distribute,
+          transmit, display, perform, reproduce, publish, license, create
+          derivative works from, transfer, or sell any content, software,
+          products, or services obtained from our website and services.
+        </p>
+
+        <h4>5. User Conduct</h4>
+
+        <p>
+          You agree not to engage in any of the following prohibited activities:
+          (a) copying, distributing, or disclosing any part of our website and
+          services in any medium, including without limitation by any automated
+          or non-automated means; (b) using any automated system, including
+          without limitation “robots,” “spiders,” “offline readers,” etc., to
+          access our website and services in a manner that sends more request
+          messages to the [Company Name] servers than a human can reasonably
+          produce in the same period of time by using a conventional on-line web
+          browser; (c) attempting to interfere with, compromise the system
+          integrity or security or decipher any transmissions to or from the
+          servers running our website and services; (d) taking any action that
+          imposes, or may impose at our sole discretion an unreasonable or
+          disproportionately large load on our infrastructure; (e) uploading
+          invalid data, viruses, worms, or other software agents through our
+          website and services; (f) collecting or harvesting any personally
+          identifiable information, including account names, from our website
+          and services; (g) using the communication systems provided by our
+          website and services for any commercial solicitation purposes; (h)
+          impersonating another person or entity or falsely stating or otherwise
+          misrepresenting your affiliation with a person or entity; (i)
+          interfering with the proper working of our website and services.
+        </p>
+
+        <h4>6. Termination</h4>
+        <p>
+          [Company Name] may terminate this Agreement, or terminate or suspend
+          your access to our website and services at any time, with or without
+          cause, with or without notice. Upon termination, you will lose access
+          to our website and services.
+        </p>
+
+        <h4>7. Disclaimer of Warranty</h4>
+
+        <p>
+          Our website and services are provided “as is” and “as available”
+          without warranty of any kind. [Company Name] and our licensors hereby
+          disclaim all warranties, express or implied, including but not limited
+          to the implied warranties of merchantability, fitness for a particular
+          purpose, and non-infringement
         </p>
       </div>
 
-      <div className="single-button-container">
-        <div
-          className="sign-btn"
-          onClick={() => btnAction(1)}
-        >
-          <p>Get back</p>
-        </div>
+      <div className="main-footer">
+        <MainBtnComponent
+          btnAction={() => setSignStepper(1)}
+          btnText={"Back to register"}
+        />
       </div>
     </div>
   );

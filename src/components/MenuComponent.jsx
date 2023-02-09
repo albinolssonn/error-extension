@@ -10,29 +10,22 @@ const MenuComponent = ({ setMenuToggle, setContentToggle }) => {
   return (
     <div className="menu-container">
       <div className="menu-btn-container">
-        {/* <button id="menu-btn">Upgrade account</button>
-        <button id="menu-btn">Account Settings</button> */}
-        <button
-          id="menu-btn"
+        <div
+          id="main-btn"
           onClick={() => setContentToggle(2)}
         >
           Privacy Policy
-        </button>
+        </div>
       </div>
 
-      <div className="menu-footer">
+      <div className="footer">
         <div
-          className="footer-btn"
+          id="main-btn"
           onClick={signOutHandler}
         >
           <LogoutIcon />
           <p>Sign Out</p>
         </div>
-
-        {/* <div className="footer-btn">
-          <PublicIcon />
-          <p>Visit us</p>
-        </div> */}
       </div>
     </div>
   );

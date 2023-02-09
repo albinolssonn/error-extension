@@ -17,7 +17,7 @@ const IndexPage = () => {
   const [user, setUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("Test");
   const [menuToggle, setMenuToggle] = useState(false);
 
   useEffect(() => {
@@ -40,45 +40,47 @@ const IndexPage = () => {
 
   // Ska man lägga content container i de olika komponenterna istället?
   return (
-    <div className="content-container">
+    <div className="main-container">
       <HeaderComponent
         isLoading={isLoading}
         setMenuToggle={setMenuToggle}
         menuToggle={menuToggle}
       />
 
-      {menuToggle ? (
-        <>
-          <MenuModal setMenuToggle={setMenuToggle} />
-        </>
-      ) : (
-        <>
-          {user ? (
-            <>
-              {isLoading ? (
-                <LoadingComponent />
-              ) : (
-                <>
-                  {result ? (
-                    <OutputContainer
-                      result={result}
-                      resetHandler={resetHandler}
-                      copyHandler={copyHandler}
-                    />
-                  ) : (
-                    <InputContainer
-                      setInput={setInput}
-                      fetchHandler={fetchHandler}
-                    />
-                  )}
-                </>
-              )}
-            </>
-          ) : (
-            <SignPage />
-          )}
-        </>
-      )}
+      <div className="content-container">
+        {menuToggle ? (
+          <>
+            <MenuModal setMenuToggle={setMenuToggle} />
+          </>
+        ) : (
+          <>
+            {user ? (
+              <>
+                {isLoading ? (
+                  <LoadingComponent />
+                ) : (
+                  <>
+                    {result ? (
+                      <OutputContainer
+                        result={result}
+                        resetHandler={resetHandler}
+                        copyHandler={copyHandler}
+                      />
+                    ) : (
+                      <InputContainer
+                        setInput={setInput}
+                        fetchHandler={fetchHandler}
+                      />
+                    )}
+                  </>
+                )}
+              </>
+            ) : (
+              <SignPage />
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };

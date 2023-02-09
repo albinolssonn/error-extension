@@ -52,9 +52,9 @@ const RegisterComponent = ({ setSignStepper }) => {
         />
       </div>
 
-      <div className="btn-container">
+      <div className="sign-btn-container">
         <div
-          className="sign-btn"
+          id="main-btn"
           onClick={registerHandler}
         >
           <p>Create Account</p>

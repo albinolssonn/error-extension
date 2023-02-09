@@ -15,10 +15,16 @@
   position: relative;
 }
 
-.content-container {
+.main-container {
   height: 550px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.content-container {
+  height: 100%;
+  padding: 5px;
   position: relative;
 }
 
@@ -50,9 +56,11 @@
 
 /* Text */
 
-.text-container {
+.text-content {
   height: 100%;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 textarea {
@@ -135,7 +143,6 @@ textarea {
 /* Sign Page */
 
 .sign-form {
-  padding: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -159,7 +166,7 @@ textarea {
   font-size: 14px;
 
   border-style: none;
-  padding: 12px;
+  padding: 14.5px;
   background: #34343a;
   color: #f5f5f5;
   text-align: center;
@@ -167,27 +174,12 @@ textarea {
   outline: none;
 }
 
-.btn-container {
+.sign-btn-container {
   display: flex;
   flex-direction: column;
 }
 
-.line {
-  height: 1px;
-  width: 100px;
-  background-color: #80808e;
-}
-
-.divider {
-  color: #80808e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 5px;
-}
-
-.sign-btn {
+/* .sign-btn {
   font-size: 14px;
   background-color: #34343a;
   color: #f5f5f5;
@@ -198,12 +190,12 @@ textarea {
   padding: 12px;
   border-radius: 5px;
   transition: 0.2s ease-in;
-}
+} */
 
-.sign-btn:hover {
+/* .sign-btn:hover {
   background-color: #4a4a52;
   cursor: pointer;
-}
+} */
 
 .navlink {
   color: #80808e;
@@ -236,16 +228,15 @@ textarea {
   cursor: pointer;
 }
 
-.TOU-section {
+.paragraph-section {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.TOU-container {
+.paragraph-container {
   max-height: 430px;
-  padding: 10px 10px 0px 10px;
   color: #80808e;
   display: flex;
   flex-direction: column;
@@ -265,23 +256,23 @@ textarea {
 
 .menu-container {
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .menu-btn-container {
-  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-#menu-btn {
+#main-btn {
   color: #80808e;
   background: #34343a;
-  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   height: 45px;
   border: none;
@@ -295,30 +286,13 @@ textarea {
   cursor: pointer;
 }
 
-.menu-footer {
+.footer {
   display: flex;
-  padding: 5px;
-
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   gap: 5px;
 }
 
-.footer-btn {
-  color: #80808e;
-  background: #34343a;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  font-size: 14px;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-}
-
-.footer-btn:hover {
+#main-btn:hover {
   background: #4a4a52;
   color: #f5f5f5;
   cursor: pointer;
