@@ -17,7 +17,7 @@ const IndexPage = () => {
   const [user, setUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState("");
-  const [result, setResult] = useState("Test");
+  const [result, setResult] = useState("");
   const [menuToggle, setMenuToggle] = useState(false);
 
   useEffect(() => {

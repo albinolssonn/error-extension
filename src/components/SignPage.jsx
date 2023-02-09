@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import HeaderComponent from "./HeaderComponent";
 import RegisterComponent from "./RegisterComponent";
 import SignInComponent from "./SignInComponent";
 import TOUComponent from "./TOUComponent";

@@ -1,7 +1,7 @@
 import React from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
-import PublicIcon from "@mui/icons-material/Public";
 import { signOutFunction } from "../functions/sign-functions";
+import MainBtnComponent from "./MainBtnComponent";
 
 const MenuComponent = ({ setMenuToggle, setContentToggle }) => {
   const signOutHandler = () => {
@@ -10,12 +10,10 @@ const MenuComponent = ({ setMenuToggle, setContentToggle }) => {
   return (
     <div className="menu-container">
       <div className="menu-btn-container">
-        <div
-          id="main-btn"
-          onClick={() => setContentToggle(2)}
-        >
-          Privacy Policy
-        </div>
+        <MainBtnComponent
+          btnAction={() => setContentToggle(2)}
+          btnText={"Privacy Policy"}
+        />
       </div>
 
       <div className="footer">

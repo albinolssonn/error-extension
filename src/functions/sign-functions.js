@@ -14,7 +14,19 @@ export const signInWithEmail = async (email, password, setErrorCode) => {
   try {
     const tmpUser = await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
-    setErrorCode(error.message);
+    if (error.message === "Firebase: Error (auth/user-not-found).") {
+      setErrorCode("User not found.");
+    } else if (error.message === "Firebase: Error (auth/invalid-email).") {
+      setErrorCode("Invalid email address.");
+    } else if (error.message === "Firebase: Error (auth/wrong-password).") {
+      setErrorCode("Incorrect password.");
+
+      console.log(error.message);
+    } else {
+      setErrorCode(
+        "Sorry, but we are currently experience authentication issues."
+      );
+    }
   }
 };
 
@@ -34,10 +46,24 @@ export const registerWithEmail = async (
         password
       );
     } catch (error) {
-      setErrorCode(error.message);
+      console.log(error.message);
+      if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+        setErrorCode("Email address already exists.");
+      } else if (error.message === "Firebase: Error (auth/invalid-email).") {
+        setErrorCode("Invalid email address.");
+      } else if (
+        error.message ===
+        "Firebase: Password should be at least 6 characters (auth/weak-password)."
+      ) {
+        setErrorCode("Password has to be at least six characters.");
+      } else {
+        setErrorCode(
+          "Sorry, but we are currently experience authentication issues."
+        );
+      }
     }
   } else {
-    console.log("Password missmatch...");
+    setErrorCode("Password does not match.");
   }
 };
 

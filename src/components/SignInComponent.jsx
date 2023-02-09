@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-// import { useNavigate } from "react-router-dom";
-import { signInWithEmail, signInWithGoogle } from "../functions/sign-functions";
+import { signInWithEmail } from "../functions/sign-functions";
+import MainBtnComponent from "./MainBtnComponent";
 
 const SignInComponent = ({ setSignStepper }) => {
   const [email, setEmail] = useState("");
@@ -15,12 +14,6 @@ const SignInComponent = ({ setSignStepper }) => {
   const emailLoginHandler = () => {
     signInWithEmail(email, password, setErrorCode);
   };
-
-  // const googleSignInHandler = () => {
-  //   signInWithGoogle(setErrorCode);
-  // };
-
-  // Funktion för visuell felmeddelande
 
   return (
     <div className="sign-form">
@@ -41,17 +34,21 @@ const SignInComponent = ({ setSignStepper }) => {
       </div>
 
       <div className="sign-btn-container">
-        <div
-          id="main-btn"
-          onClick={emailLoginHandler}
-        >
-          <p>Sign in</p>
-        </div>
+        <MainBtnComponent
+          btnAction={emailLoginHandler}
+          btnText={"Sign in"}
+        />
 
         <div className="navlink">
           <p onClick={navigateToRegister}>Don't have an account yet?</p>
         </div>
       </div>
+
+      {errorCode && (
+        <div className="error-message">
+          <div className="error-message-text"> {errorCode}</div>
+        </div>
+      )}
     </div>
   );
 };

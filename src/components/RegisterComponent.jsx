@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import {
-  registerWithEmail,
-  signInWithGoogle,
-} from "../functions/sign-functions";
+import { registerWithEmail } from "../functions/sign-functions";
 
 const RegisterComponent = ({ setSignStepper }) => {
   const [email, setEmail] = useState("");
@@ -18,16 +14,6 @@ const RegisterComponent = ({ setSignStepper }) => {
   const registerHandler = () => {
     registerWithEmail(email, password, vPassword, setErrorCode);
   };
-
-  const termsOfUseAction = () => {
-    console.log("Terms of use compliant!");
-  };
-
-  // const googleSignInHandler = () => {
-  //   signInWithGoogle(setErrorCode);
-  // };
-
-  // Funktion för visuell felmeddelande
 
   return (
     <div className="sign-form">
@@ -63,6 +49,12 @@ const RegisterComponent = ({ setSignStepper }) => {
           <p onClick={navigateToSignIn}>Are you already a part of us?</p>
         </div>
       </div>
+
+      {errorCode && (
+        <div className="error-message">
+          <div className="error-message-text"> {errorCode}</div>
+        </div>
+      )}
 
       <div className="t-o-u-text">
         <p>By signing up you agree to our </p>
