@@ -60,26 +60,40 @@ const TOUComponent = ({ setSignStepper }) => {
 
         <p>
           You agree not to engage in any of the following prohibited activities:
+          <br />
+          <br />
           (a) copying, distributing, or disclosing any part of our website and
           services in any medium, including without limitation by any automated
-          or non-automated means; (b) using any automated system, including
-          without limitation “robots,” “spiders,” “offline readers,” etc., to
-          access our website and services in a manner that sends more request
-          messages to the [Company Name] servers than a human can reasonably
-          produce in the same period of time by using a conventional on-line web
-          browser; (c) attempting to interfere with, compromise the system
-          integrity or security or decipher any transmissions to or from the
-          servers running our website and services; (d) taking any action that
-          imposes, or may impose at our sole discretion an unreasonable or
-          disproportionately large load on our infrastructure; (e) uploading
-          invalid data, viruses, worms, or other software agents through our
-          website and services; (f) collecting or harvesting any personally
-          identifiable information, including account names, from our website
-          and services; (g) using the communication systems provided by our
-          website and services for any commercial solicitation purposes; (h)
-          impersonating another person or entity or falsely stating or otherwise
-          misrepresenting your affiliation with a person or entity; (i)
-          interfering with the proper working of our website and services.
+          or non-automated means; <br />
+          <br />
+          (b) using any automated system, including without limitation “robots,”
+          “spiders,” “offline readers,” etc., to access our website and services
+          in a manner that sends more request messages to the [Company Name]
+          servers than a human can reasonably produce in the same period of time
+          by using a conventional on-line web browser; <br />
+          <br />
+          (c) attempting to interfere with, compromise the system integrity or
+          security or decipher any transmissions to or from the servers running
+          our website and services; <br />
+          <br />
+          (d) taking any action that imposes, or may impose at our sole
+          discretion an unreasonable or disproportionately large load on our
+          infrastructure; <br />
+          <br />
+          (e) uploading invalid data, viruses, worms, or other software agents
+          through our website and services; <br />
+          <br />
+          (f) collecting or harvesting any personally identifiable information,
+          including account names, from our website and services; <br />
+          <br />
+          (g) using the communication systems provided by our website and
+          services for any commercial solicitation purposes; <br />
+          <br />
+          (h) impersonating another person or entity or falsely stating or
+          otherwise misrepresenting your affiliation with a person or entity;
+          <br />
+          <br />
+          (i) interfering with the proper working of our website and services.
         </p>
 
         <h4>6. Termination</h4>
